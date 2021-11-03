@@ -136,6 +136,7 @@ class DMCWrapper(core.Env):
         self._true_action_space.seed(seed)
         self._norm_action_space.seed(seed)
         self._observation_space.seed(seed)
+        self._env.task.random.seed(seed)
 
     def step(self, action):
         assert self._norm_action_space.contains(action)
