@@ -1,4 +1,4 @@
-# MODIFIED BY Yawen Duan (https://github.com/kmdanielduan) to be able to
+# MODIFIED BY Yawen Duan (https://github.com/yawen-d) to be able to
 # use `suite_module` to load environments from a dm_control based suite
 
 from typing import Mapping, Union
@@ -185,8 +185,8 @@ class DMCWrapper(core.Env):
         between dm_control-only and wrapperd environments.
         """
         self._env.task._random, seed = seeding.np_random(seed)
-
         return [seed]
+
 
     def step(self, action):
         assert self._norm_action_space.contains(action)
