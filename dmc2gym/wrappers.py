@@ -185,6 +185,9 @@ class DMCWrapper(core.Env):
         between dm_control-only and wrapperd environments.
         """
         self._env.task._random, seed = seeding.np_random(seed)
+        self._true_action_space.seed(seed)
+        self._norm_action_space.seed(seed)
+        self._observation_space.seed(seed)
         return [seed]
 
 
