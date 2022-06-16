@@ -11,7 +11,7 @@ from gym.utils import seeding
 
 def _extract_min_max(s, dtype):
     assert s.dtype == np.float64 or s.dtype == np.float32
-    dim = np.int(np.prod(s.shape))
+    dim = int(np.prod(s.shape))
     if type(s) == specs.Array:
         bound = np.inf * np.ones(dim, dtype=dtype)
         return -bound, bound
